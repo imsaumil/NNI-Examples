@@ -2,7 +2,7 @@
 
 ## RESULT SUMMARY ##
 
-`
+```
 ORIGINAL UN-PRUNED MODEL: 
  VAE(
   (fc1): Linear(in_features=784, out_features=600, bias=True)
@@ -128,4 +128,4 @@ PRUNED MODEL:
 ====> Test set loss: 125.0979
 ====> Test set loss: 125.0193
 ====> Test set loss: 125.0515
-`
+```
