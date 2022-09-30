@@ -47,6 +47,7 @@ config_list_2 = [
 ```
 
 We also provide the option of using CPU or GPU of the machine that you are running the code on. Although for this, a code change in the model definition (model_VAE.py) is required. As a simple way of doing this, we just directly change the argument defined for `no-cuda` (line 15).
+
 For using GPU:
 ```
 parser.add_argument('--no-cuda', action='store_true', default=False, help='disables CUDA training')
