@@ -12,7 +12,7 @@ The **pruning_VAE** contains the methods used for pruning the model and the diff
 ## Code execution
 The pruning example can be run by simply triggering `python3 pruning_VAE.py`
 
-Lines 10 and 11 of the pruning_VAE file provide the choice between the different pruners and the different configurations for pruning on the model defined in model_VAE.
+Lines 10 and 11 of the **pruning_VAE** file provide the choice between the different pruners and the different configurations for pruning on the model defined in **model_VAE**.
 ```
 pruner_used = "FPGMPruner" or "L1NormPruner"
 config_choice = "config_list_1" or "config_list_2"
