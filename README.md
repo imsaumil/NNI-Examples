@@ -7,7 +7,7 @@ Saumil Shah
 
 The python file **model_VAE** contains the main definition of the model i.e. VAE. This is inspired from the pytorch/examples github but is a little different in the actual definition of the model layers.
 
-**pruning_VAE** contains the methods used for pruning the model and the different configurations used for model pruning. It uses two pruning methods and two different configurations from the NNI pruning library.
+The **pruning_VAE** contains the methods used for pruning the model and the different configurations used for model pruning. It uses two pruning methods and two different configurations from the NNI pruning library.
 
 ## Code execution
 The pruning example can be run by simply triggering `python3 pruning_VAE.py`
