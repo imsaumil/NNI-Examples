@@ -1,0 +1,131 @@
+DEVICE BEING USED:  cuda 
+ORIGINAL UN-PRUNED MODEL: 
+ VAE(
+  (fc1): Linear(in_features=784, out_features=600, bias=True)
+  (fc21): Linear(in_features=600, out_features=100, bias=True)
+  (fc22): Linear(in_features=600, out_features=100, bias=True)
+  (fc3): Linear(in_features=100, out_features=600, bias=True)
+  (fc4): Linear(in_features=600, out_features=784, bias=True)
+) 
+====> Test set loss: 135.1325
+====> Test set loss: 118.9197
+====> Test set loss: 112.7824
+====> Test set loss: 109.8977
+====> Test set loss: 108.5349
+====> Test set loss: 107.4287
+====> Test set loss: 106.5929
+====> Test set loss: 106.0382
+====> Test set loss: 105.5211
+====> Test set loss: 105.1355
+====> Test set loss: 104.8926
+====> Test set loss: 104.6621
+====> Test set loss: 104.3693
+====> Test set loss: 104.0606
+====> Test set loss: 103.9012
+THE TOTAL EXECUTION TIME OF UNPRUNED MODEL:  151.94118523597717 
+PRUNER WRAPPED MODEL WITH FPGMPruner: 
+ VAE(
+  (fc1): PrunerModuleWrapper(
+    (module): Linear(in_features=784, out_features=600, bias=True)
+  )
+  (fc21): PrunerModuleWrapper(
+    (module): Linear(in_features=600, out_features=100, bias=True)
+  )
+  (fc22): PrunerModuleWrapper(
+    (module): Linear(in_features=600, out_features=100, bias=True)
+  )
+  (fc3): PrunerModuleWrapper(
+    (module): Linear(in_features=100, out_features=600, bias=True)
+  )
+  (fc4): Linear(in_features=600, out_features=784, bias=True)
+) 
+fc1  sparsity :  0.3 
+fc21  sparsity :  0.3 
+fc22  sparsity :  0.3 
+fc3  sparsity :  0.3 
+C:\Users\sashah8\Anaconda3\envs\nni_env\lib\site-packages\torch\jit\_trace.py:992: TracerWarning: Trace had nondeterministic nodes. Did you forget call .eval() on your model? Nodes:
+	%eps : Float(8, 100, strides=[100, 1], requires_grad=0, device=cuda:0) = aten::randn_like(%std, %40, %41, %42, %43, %44) # C:\Users\sashah8\CS - 791\NNI\vae\model_VAE.py:61:0
+This may cause errors in trace checking. To disable trace checking, pass check_trace=False to torch.jit.trace()
+  _check_trace(
+C:\Users\sashah8\Anaconda3\envs\nni_env\lib\site-packages\torch\jit\_trace.py:992: TracerWarning: Output nr 1. of the traced function does not match the corresponding output of the Python function. Detailed error:
+Tensor-likes are not close!
+Mismatched elements: 6270 / 6272 (100.0%)
+Greatest absolute difference: 0.8529882375150919 at index (2, 566) (up to 1e-05 allowed)
+Greatest relative difference: 1809.2053561335981 at index (7, 653) (up to 1e-05 allowed)
+  _check_trace(
+[2022-09-27 17:31:12] start to speedup the model
+C:\Users\sashah8\Anaconda3\envs\nni_env\lib\site-packages\torch\jit\_trace.py:992: TracerWarning: Output nr 1. of the traced function does not match the corresponding output of the Python function. Detailed error:
+Tensor-likes are not close!
+Mismatched elements: 6271 / 6272 (100.0%)
+Greatest absolute difference: 0.8581843953579664 at index (5, 493) (up to 1e-05 allowed)
+Greatest relative difference: 1747.7283636202496 at index (5, 662) (up to 1e-05 allowed)
+  _check_trace(
+no multi-dimension masks found.
+[2022-09-27 17:31:12] infer module masks...
+[2022-09-27 17:31:12] Update mask for .aten::view.5
+[2022-09-27 17:31:12] Update mask for fc1
+[2022-09-27 17:31:12] Update mask for .aten::relu.6
+[2022-09-27 17:31:12] Update mask for fc21
+[2022-09-27 17:31:12] Update mask for fc22
+[2022-09-27 17:31:12] Update mask for .aten::mul.7
+[2022-09-27 17:31:12] Update mask for .aten::exp.8
+[2022-09-27 17:31:12] Update mask for .aten::randn_like.9
+[2022-09-27 17:31:12] Update mask for .aten::mul.10
+[2022-09-27 17:31:12] Update mask for .aten::add.11
+[2022-09-27 17:31:12] Update mask for fc3
+[2022-09-27 17:31:12] Update mask for .aten::relu.12
+[2022-09-27 17:31:12] Update mask for fc4
+[2022-09-27 17:31:12] Update mask for .aten::sigmoid.13
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::sigmoid.13
+[2022-09-27 17:31:12] Update the indirect sparsity for the fc4
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::relu.12
+[2022-09-27 17:31:12] Update the indirect sparsity for the fc3
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::add.11
+[2022-09-27 17:31:12] Update the indirect sparsity for the fc21
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::mul.10
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::randn_like.9
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::exp.8
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::mul.7
+[2022-09-27 17:31:12] Update the indirect sparsity for the fc22
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::relu.6
+[2022-09-27 17:31:12] Update the indirect sparsity for the fc1
+[2022-09-27 17:31:12] Update the indirect sparsity for the .aten::view.5
+[2022-09-27 17:31:12] resolve the mask conflict
+[2022-09-27 17:31:12] replace compressed modules...
+[2022-09-27 17:31:12] replace module (name: fc1, op_type: Linear)
+[2022-09-27 17:31:12] replace linear with new in_features: 784, out_features: 180
+C:\Users\sashah8\Anaconda3\envs\nni_env\lib\site-packages\torch\_tensor.py:1083: UserWarning: The .grad attribute of a Tensor that is not a leaf Tensor is being accessed. Its .grad attribute won't be populated during autograd.backward(). If you indeed want the .grad field to be populated for a non-leaf Tensor, use .retain_grad() on the non-leaf Tensor. If you access the non-leaf Tensor by mistake, make sure you access the leaf Tensor instead. See github.com/pytorch/pytorch/pull/30531 for more informations. (Triggered internally at  C:\cb\pytorch_1000000000000\work\build\aten\src\ATen/core/TensorBody.h:482.)
+  return self._grad
+[2022-09-27 17:31:12] replace module (name: fc21, op_type: Linear)
+[2022-09-27 17:31:12] replace linear with new in_features: 180, out_features: 33
+[2022-09-27 17:31:12] replace module (name: fc22, op_type: Linear)
+[2022-09-27 17:31:12] replace linear with new in_features: 180, out_features: 33
+[2022-09-27 17:31:12] replace module (name: fc3, op_type: Linear)
+[2022-09-27 17:31:12] replace linear with new in_features: 33, out_features: 180
+[2022-09-27 17:31:12] replace module (name: fc4, op_type: Linear)
+[2022-09-27 17:31:12] replace linear with new in_features: 180, out_features: 784
+[2022-09-27 17:31:12] speedup done
+PRUNED MODEL WITH FPGMPruner: 
+ VAE(
+  (fc1): Linear(in_features=784, out_features=180, bias=True)
+  (fc21): Linear(in_features=180, out_features=33, bias=True)
+  (fc22): Linear(in_features=180, out_features=33, bias=True)
+  (fc3): Linear(in_features=33, out_features=180, bias=True)
+  (fc4): Linear(in_features=180, out_features=784, bias=True)
+) 
+====> Test set loss: 109.2803
+====> Test set loss: 107.2410
+====> Test set loss: 106.5829
+====> Test set loss: 106.0033
+====> Test set loss: 105.9069
+====> Test set loss: 105.4766
+====> Test set loss: 105.4946
+====> Test set loss: 105.2154
+====> Test set loss: 104.9834
+====> Test set loss: 104.9887
+====> Test set loss: 104.9335
+====> Test set loss: 104.6891
+====> Test set loss: 104.5935
+====> Test set loss: 104.6021
+====> Test set loss: 104.3962
+THE TOTAL EXECUTION TIME OF PRUNED MODEL:  152.12833619117737 

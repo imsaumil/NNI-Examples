@@ -9,6 +9,12 @@ The python file **model_VAE** contains the main definition of the model i.e. VAE
 
 The **pruning_VAE** contains the methods used for pruning the model and the different configurations used for model pruning. It uses two pruning methods and two different configurations from the NNI pruning library.
 
+The log_files folder contains the log files for the different configurations tried.
+```
+File naming format: <Pruner used>_<Config used>_<Device used>.txt
+```
+We have also consolidated the NNI configurations into `ConfigList.txt`
+
 ## Code execution
 The pruning example can be run by simply triggering `python3 pruning_VAE.py`
 

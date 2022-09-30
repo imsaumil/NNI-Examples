@@ -1,0 +1,19 @@
+# Defining the configuration list for pruning
+configuration_list = [{
+            'sparsity_per_layer': 0.4,
+            'op_types': ['Linear']
+        }, {
+            'exclude': True,
+            'op_names': ['fc1', 'fc4']
+        }]
+  
+
+# Defining the alternate configuration list for pruning
+configuration_list = [{
+            'sparsity_per_layer': 0.7,
+            'op_types': ['Linear']
+        }, {
+            'exclude': True,
+            'op_names': ['fc4']
+        }]
+
