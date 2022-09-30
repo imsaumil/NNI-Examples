@@ -13,7 +13,7 @@ The log_files folder contains the log files for the different configurations tri
 ```
 File naming format: <Pruner used>_<Config used>_<Device used>.txt
 ```
-We have also consolidated the NNI configurations into `ConfigList.txt`
+We have also consolidated the NNI configurations into `config_list.txt`
 
 ## Code execution
 The pruning example can be run by simply triggering `python3 pruning_VAE.py`
@@ -46,13 +46,13 @@ config_list_2 = [
 ]
 ```
 
-We also provide the option of using CPU or GPU of the machine that you are running the code on. Although for this, a code change in the model definition (model_VAE.py) is required. As a simple way of doing this, we just directly change the argument defined for `no-cuda` (line 15).
+We also provide the option of using CPU or GPU of the machine that you are running the code on. Although for this, a code change in the model definition (**model_VAE.py**) is required. As a simple way of doing this, we just directly change the argument defined for `no-cuda` (line 15).
 
-For using GPU:
+For using `GPU`:
 ```
 parser.add_argument('--no-cuda', action='store_true', default=False, help='disables CUDA training')
 ```
-For using CPU
+For using `CPU`
 ```
 parser.add_argument('--no-cuda', action='store_true', default=True,help='disables CUDA training')
 ```
